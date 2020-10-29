@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/constants.dart';
-import 'package:flutter_app/screens/homescreen/components/components/fab.dart';
+import 'package:flutter_app/screens/homescreen/components/components/fab1.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -9,7 +9,7 @@ class Body extends StatelessWidget {
       children: <Widget>[
         // FAB(),
         OptionList(),
-        FAB(),
+        // FAB1(),
       ],
     );
   }
@@ -20,7 +20,7 @@ class Body extends StatelessWidget {
   //     theme: ThemeData(
   //       primarySwatch: Colors.blue,
   //     ),
-  //     home: FAB(),
+  //     home: FAB1(),
   //   );
   // }
 }
@@ -32,7 +32,7 @@ class OptionList extends StatefulWidget {
 
 class _OptionListState extends State<OptionList> {
   int selectedIndex = 0;
-  List options = ['Data', 'Reports', 'Sales', 'Tools', 'About'];
+  List options = ['Data', 'Reports', 'Sales', 'Tools'];
   @override
   Widget build(BuildContext context) {
     return Container(

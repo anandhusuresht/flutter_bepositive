@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 class FAB1 extends StatelessWidget {
-  const FAB({
-    Key key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return MyHomePage();
+    return MaterialApp(
+      title: 'Flutter Fab Menu',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
   }
 }
 
@@ -76,8 +78,8 @@ class _MyHomePageState extends State<MyHomePage>
                 children: <Widget>[
                   IgnorePointer(
                     child: Container(
-                      color: Colors.black.withOpacity(
-                          0), // comment or change to transparent color
+                      // color: Colors.black.withOpacity(
+                      //     0.5), // comment or change to transparent color
                       height: 150.0,
                       width: 150.0,
                     ),
@@ -92,10 +94,10 @@ class _MyHomePageState extends State<MyHomePage>
                       alignment: Alignment.center,
                       child: CircularButton(
                         color: Colors.blue,
-                        width: 50,
-                        height: 50,
+                        width: 40,
+                        height: 40,
                         icon: Icon(
-                          Icons.add,
+                          Icons.cake,
                           color: Colors.white,
                         ),
                         onClick: () {
@@ -105,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage>
                     ),
                   ),
                   Transform.translate(
-                    offset: Offset.fromDirection(getRadiansFromDegree(225),
+                    offset: Offset.fromDirection(getRadiansFromDegree(240),
                         degTwoTranslationAnimation.value * 100),
                     child: Transform(
                       transform: Matrix4.rotationZ(
@@ -113,15 +115,37 @@ class _MyHomePageState extends State<MyHomePage>
                         ..scale(degTwoTranslationAnimation.value),
                       alignment: Alignment.center,
                       child: CircularButton(
-                        color: Colors.black,
-                        width: 50,
-                        height: 50,
+                        color: Colors.brown,
+                        width: 40,
+                        height: 40,
                         icon: Icon(
-                          Icons.camera_alt,
+                          Icons.umbrella,
                           color: Colors.white,
                         ),
                         onClick: () {
                           print('Second button');
+                        },
+                      ),
+                    ),
+                  ),
+                  Transform.translate(
+                    offset: Offset.fromDirection(getRadiansFromDegree(210),
+                        degThreeTranslationAnimation.value * 100),
+                    child: Transform(
+                      transform: Matrix4.rotationZ(
+                          getRadiansFromDegree(rotationAnimation.value))
+                        ..scale(degThreeTranslationAnimation.value),
+                      alignment: Alignment.center,
+                      child: CircularButton(
+                        color: Colors.orange,
+                        width: 40,
+                        height: 40,
+                        icon: Icon(
+                          Icons.person,
+                          color: Colors.white,
+                        ),
+                        onClick: () {
+                          print('Third Button');
                         },
                       ),
                     ),
@@ -135,15 +159,15 @@ class _MyHomePageState extends State<MyHomePage>
                         ..scale(degThreeTranslationAnimation.value),
                       alignment: Alignment.center,
                       child: CircularButton(
-                        color: Colors.orangeAccent,
-                        width: 50,
-                        height: 50,
+                        color: Colors.pinkAccent,
+                        width: 40,
+                        height: 40,
                         icon: Icon(
-                          Icons.person,
+                          Icons.file_copy,
                           color: Colors.white,
                         ),
                         onClick: () {
-                          print('Third Button');
+                          print('Fourth Button');
                         },
                       ),
                     ),
